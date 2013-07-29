@@ -1,0 +1,280 @@
+﻿@{
+    ViewBag.Title = "IngresarAlCurso";
+}
+<section class="content-wrapper main-content clear-fix body_Pages">
+<h2 class="letraD">Chat</h2>
+<p>@Html.ActionLink("Volver a los Cursos", "Index")</p>
+<style  type="text/css">
+    .contenedor {
+        background:#ffffff;
+        border-radius:5px;
+        margin:0 auto;
+        min-height:30px;
+        text-align:center;
+        border:1px solid #cfdee5;
+        -moz-box-shadow:2px 2px 7px #000;
+        -webkit-box-shadow:2px 2px 7px #000;
+        box-shadow:2px 2px 7px #000;
+    }
+    .opciones{
+       padding-left:0px 2px;
+       margin:2px 5px;
+       color:#000000;
+       font-weight:normal;
+       font-size:12px;
+       vertical-align:middle;
+       text-align:center;
+       float:left;
+    }
+    .ChatRight, .ChatContent, .ChatLeft {
+        border:1px solid #cfdee5;
+        display:inline-block;
+        margin-top: 4px; 
+        min-height:120px;
+        -moz-box-shadow:2px 2px 7px #000;
+        -webkit-box-shadow:2px 2px 7px #000;
+        box-shadow:2px 2px 7px #000;
+    }
+    .ChatRight{
+        width:25%;
+        background: url("../../Images/modelitoRight.png")no-repeat;
+        font-weight:bold;
+        margin-left:5px;
+        margin-top: 4px;
+        
+    }
+    .ChatRight ul li {
+        cursor:pointer;
+    }
+
+    .ChatContent {
+        width:70%;
+    }
+    .ChatLeft{
+        width:15%;
+    }
+    .nav-tabs {
+        line-height: 20px;
+        border: 1px solid transparent;
+        border-bottom: 1px solid #ccc;
+        padding-top: 6px;
+        padding-bottom: 6px;
+        font-size: 11.9px;
+        background: #f5f5f5;
+        text-align:center;
+        text-transform:uppercase;
+        font-style:oblique;
+        font-weight:bold;
+    }
+    .tab-wrap {
+        padding: 12px;
+    }
+    .tab-content {
+        overflow: auto;
+        margin-bottom: 20px;
+    }
+    .tab-content>.active{
+        display: block;
+    }
+    .tab-content,.Contenido{
+        overflow: auto;
+        margin-bottom: 20px;
+        border:1px solid #3497c5;
+        display:block;
+    }
+    .nav,.Contenido {
+        margin-left: 0;
+        margin-bottom: 20px;
+        list-style: none;
+    }
+    .nav-actions li {
+        padding: 2px 0;
+        border-bottom: 1px dotted #eee;
+    }
+    .nav-actions li span {
+        border: 0 none;
+        background-image: url('../../Images/img/user.png');
+        background-repeat: no-repeat;
+        background-position: left top;
+        padding-left: 16px;
+    }
+    .nav>li>span {display: block;}
+    .nav-actions li span{
+        color: #3497c5;
+        text-decoration: none;
+        -webkit-transition: all .3s ease;
+        -moz-transition: all .3s ease;
+        -o-transition: all .3s ease;
+        transition: all .3s ease;
+    }
+    /********/
+    .nav-action li {
+        padding: 2px 0;
+        border-bottom: 1px dotted #eee;
+    }
+    /********/
+    .nav-actions li span:hover {
+        background-color: transparent;
+        background-position: 4px top;
+    }
+    .nav-action li span:hover {
+        background-color: transparent;
+        background-position: 4px top;
+    }
+    .nav>li>a:hover, .nav>li>a:focus {
+        text-decoration: none;
+        background-color: #eee;
+    }
+    #fecha {
+        color:#0094ff;
+        font-size:small;
+        font-size:10px;
+        float:right;
+        padding-right:15px;
+    }
+    #fontC {
+        color:#808080;
+    }
+    .Ussuarios,#UserList{
+        color:#808080;
+        float:left;
+        font-style:italic;
+    }
+    #UserListMsj {
+        color:#000000;
+        float:left;
+        font-style:italic;
+        font-weight:bold;
+    }
+    #listaMensajes {
+        list-style-type: circle;
+    }
+    .CursoClass,.ListaUsrs {
+        -moz-box-shadow:inset 0px 1px 0px 0px #ffffff;
+	    -webkit-box-shadow:inset 0px 1px 0px 0px #ffffff;
+	    box-shadow:inset 0px 1px 0px 0px #ffffff;
+	    background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #ededed), color-stop(1, #dfdfdf) );
+	    background:-moz-linear-gradient( center top, #ededed 5%, #dfdfdf 100% );
+	    filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#ededed', endColorstr='#dfdfdf');
+	    background-color:#ededed;
+	    -moz-border-radius:6px;
+	    -webkit-border-radius:6px;
+	    border-radius:6px;
+	border:1px solid #dcdcdc;
+	display:inline-block;
+	color:#777777;
+	font-family:arial;
+	font-size:15px;
+	font-weight:bold;
+	padding:6px 243px;
+	text-decoration:none;
+	text-shadow:1px 1px 0px #ffffff;
+    }
+    .ListaUsrs {
+        padding:6px 71px;
+    }
+    .CursoClass:hover,.ListaUsrs:hover {
+	background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #dfdfdf), color-stop(1, #ededed) );
+	background:-moz-linear-gradient( center top, #dfdfdf 5%, #ededed 100% );
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#dfdfdf', endColorstr='#ededed');
+	background-color:#dfdfdf;
+    }.CursoClass:active,.ListaUsrs:active {
+	    position:relative;
+	    top:1px;
+    }
+    .CursoClasss {
+        
+        border-radius:5px;
+        background:rgba(227,229,229, 0.8); /*rgba(64,70,77, 0.8);*/
+        opacity:0.5;
+        padding: .4em 1em;
+        margin: 0 .5em;
+        color: #414e5e;
+        text-decoration: none;
+        font-weight: bold;
+        font-size: 18px;
+        font-family: "Arial";
+        text-shadow: 0 1px 0 #ccc, 
+                        0 2px 0 #808080,
+                        0 3px 0 #bbb,
+                        0 4px 0 #eee;               
+        text-align: center;
+        -moz-box-shadow:2px 2px 7px #000;
+        -webkit-box-shadow:2px 2px 7px #000;
+        box-shadow:2px 2px 7px #000;
+    }
+</style>
+<script>
+    $(document).ready(function () {
+        window.setInterval(function () {
+            $.post("/Cursos/getUsuarios", {"idSe":$("#idSe").val()},
+                function (data) {
+                    var i = 0;
+                    //Usuarios
+                    html = "";
+                    for (i; i < data.lista.length; i++)
+                    {
+                        html += "<li><span>";
+                        html += data.lista[i];
+                        html += "</span></li>";
+                    }
+                    $(".Usuarios ul").html(html);
+                }, "json");
+
+            $.post("/Cursos/getMensajes", { "idSe": $("#idSe").val()},
+            function (data) {
+                console.log(data.lista);
+                var i = data.lista.length-1;
+                html = "";
+                for (i; i >= 0; i--) {
+                    html += "<li>";
+                    html += "<b><div id='UserList'>" + data.lista[i].nick + ": </div></b>";
+                    html += "<div id='UserListMsj'> &nbsp;&nbsp; " + data.lista[i].mmensaje + "</div><small id='fecha'> <font id='fontC'>hace:</font>" + data.lista[i].fecha + "</small>";
+                    html += "</li>";
+                }
+                $("#listaMensajes").html(html);
+            }, "json");
+        }, 1000);
+        
+        $(this).keydown(function (e) {
+            
+            if (e.keyCode == 13)
+            {
+                if ($("#mensaje").val() != "")
+                {
+                    console.log($("#mensaje").val());
+                    $.post(
+                        "/Cursos/Enviar",
+                        { "mensaje": $("#mensaje").val(), "idUs": $("#idUs").val(), "idSe": $("#idSe").val() },
+                        function (data) {
+                            console.log(data);
+                            $("#mensaje").val("");
+                        },"json");
+                }
+            }
+        });
+    });
+</script>
+<div class="contenedor">
+    <div class="opciones Mensajes ChatContent">
+        <div class="CursoClass">
+             Chat del Curso @ViewBag.NameSc
+        </div>
+        <ul id="listaMensajes">
+        </ul>
+    </div>
+    <div class="opciones Usuarios ChatRight">
+        <div class="ListaUsrs">
+             Conectados
+        </div>
+        <ul class="nav nav-actions">
+        </ul>
+    </div>
+    <input type="hidden" id="idUs" value="@ViewBag.idUs" />
+    <input type="hidden" id="idSe" value="@ViewBag.idSesion"/>
+    <div class="MSN">
+        <textarea class="uiTextareaNoResize uiTextareaAutogrow _1rv DOMControl_placeholder" aria-controls="webMessengerRecentMessages" aria-describedby="webMessengerHeaderName" aria-owns="wmMasterViewThreadlist" name="message_body" id="mensaje" role="combobox" rows="3" onkeydown="window.Bootloader &amp;&amp; Bootloader.loadComponents([&quot;control-textarea&quot;], function() { TextAreaControl.getInstance(this) }.bind(this)); " aria-label="Escribe una respuesta..." placeholder="Escribe una respuesta..." style=""></textarea>
+    </div>
+</div>
+
+</section>

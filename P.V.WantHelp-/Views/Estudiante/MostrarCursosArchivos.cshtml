@@ -1,0 +1,25 @@
+﻿@model IEnumerable<P.V.WantHelp_.Models.Material>
+
+@{
+    ViewBag.Title = "MostrarCursosArchivos";
+}
+
+<h2>MostrarCursosArchivos</h2>
+
+<h2>MostrarCursosArchivos</h2>
+<ul>
+    @foreach (var item in Model) 
+    {
+        <li>
+            @item.archivos
+            <ul>
+                @foreach (var itemv in item.archivos) 
+                {
+                    <li>
+                        <!---0@itemv.urlHost---->
+                    </li>
+                }
+            </ul>
+        </li>    
+    }
+</ul>

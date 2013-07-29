@@ -1,0 +1,85 @@
+﻿@model P.V.WantHelp_.Models.Material
+
+@{
+    ViewBag.Title = "Delete";
+}
+<script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+	<link rel="stylesheet" href="~/Css/csspopup.css">
+	<script>
+	    $(document).ready(function () {
+
+	        $('.popupgeneral').fadeIn(function () {
+
+
+	            window.setTimeout(function () {
+	                $('.popupgeneral2.' + "zoomin").addClass('window-container-visible');
+	            }, 100);
+	        });
+
+	        $('.close').click(function () {
+	            $('.popupgeneral').fadeOut().end().find('.popupgeneral2').removeClass('window-container-visible');
+	        });
+	    });
+	</script>
+
+<div class="popupgeneral">
+		<div class="popupgeneral2 zoomin">
+		
+<h2>Eliminar</h2>
+
+<h3>Esta seguro de eliminar esto?</h3>
+<fieldset>
+    <legend>Material</legend>
+
+    <div class="display-label" style="display:none;">
+         @Html.DisplayNameFor(model => model.Id_Material)
+    </div>
+    <div class="display-field" style="display:none;">
+        @Html.DisplayFor(model => model.Id_Material)
+    </div>
+    <div style="margin-left:25px;">
+    <div class="display-label" >
+        <b> @Html.DisplayNameFor(model => model.Usuario.Nombre)</b>
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Usuario.Nombre)
+    </div>
+
+    <div class="display-label">
+        <b> @Html.DisplayNameFor(model => model.Cursos.Titulo)</b>
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Cursos.Titulo)
+    </div>
+
+    <div class="display-label">
+         <b>@Html.DisplayNameFor(model => model.archivos)</b>
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.archivos)
+    </div>
+        </div>
+    <div class="display-label" style="display:none;">
+         @Html.DisplayNameFor(model => model.urlBase)
+    </div>
+    <div class="display-field" style="display:none;">
+        @Html.DisplayFor(model => model.urlBase)
+    </div>
+
+    <div class="display-label" style="display:none;">
+         @Html.DisplayNameFor(model => model.urlHost)
+    </div>
+    <div class="display-field" style="display:none;">
+        @Html.DisplayFor(model => model.urlHost)
+    </div>
+</fieldset>
+@using (Html.BeginForm()) {
+    <p>
+        @Html.ActionLink("Cancelar", "Index")|
+        <input type="submit" value="Eliminar" class="close" style="background:none; border:none;left:0; text-decoration:underline; font-family:Calibri;font-size:12px" />
+        
+    </p>
+}
+            </div>
+		
+	</div>

@@ -1,0 +1,106 @@
+﻿@model IEnumerable<P.V.WantHelp_.Models.Cursos>
+
+@{
+    ViewBag.Title = "Index";
+}
+<link rel="stylesheet" type="text/css" href="~/Css/ink-min.css">
+<style type="text/css">
+    .circle:hover {
+    /*border: 5px solid transparent;*/
+    /*border:1px solid #65a0d8;*/
+    border-radius: 80px;
+   
+    }
+    footer { 
+    clear:both;
+    background-color: #414E5E;   
+    font-size: .8em;
+    height: 61px;
+    border-radius: 5px 5px 5px 5px;
+    margin:2px 2px 2px 2px;
+
+    filter: progid:DXImageTransform.Microsoft.gradient(gradientType=0, startColorstr='#FF696969', endColorstr='#FF252525');
+    
+}
+</style>
+<section class="content-wrapper main-content clear-fix">
+<div id="body_Curso">
+<h2 class="letraD">Bienvenido para la creacion de cursos</h2>
+
+<p>
+    <!----@Html.ActionLink("Create New", "Create")--->
+    <a href="/Cursos/Create" class="tooltip" title="Nuevo Curso">
+        <img src="~/Image/add-item.png"/>
+    </a>
+</p>
+<table class="ink-table hover">
+    <tr>
+        <th style="display:none;">
+            <!---@Html.DisplayNameFor(model => model.Id_Curso)-->
+            Nº
+        </th>
+        
+        <th>
+            @Html.DisplayNameFor(model => model.Titulo)
+        </th>
+        <th style="max-width:230px;">
+            @Html.DisplayNameFor(model => model.Descripcion)
+        </th>
+        <th>
+            <!---@Html.DisplayNameFor(model => model.Fecha_I)-->
+            Fecha Inicial
+        </th>
+        <th>
+           <!--- @Html.DisplayNameFor(model => model.Fecha_F)-->
+            Fecha Final
+        </th>
+        <th style="display:none">
+            @Html.DisplayNameFor(model => model.urlBase)
+        </th>
+        <th style="display:none">
+            @Html.DisplayNameFor(model => model.urlHost)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td style="display:none;">
+            @Html.DisplayFor(modelItem => item.Id_Curso)
+        </td>
+        
+        <td>
+            @Html.DisplayFor(modelItem => item.Titulo)
+        </td>
+        <td style="max-width:230px;">
+            @Html.DisplayFor(modelItem => item.Descripcion)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Fecha_I)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Fecha_F)
+        </td>
+        <td style="display:none">
+            @Html.DisplayFor(modelItem => item.urlBase)
+        </td>
+        <td style="display:none">
+            @Html.DisplayFor(modelItem => item.urlHost)
+        </td>
+        <td>
+            <a href="/Cursos/Edit/@item.Id_Curso" class="tooltip circle" title="Editar">
+                <img src="~/Image/edit.png"/>
+            </a><span class="barrita">|</span>
+            <a href="/Cursos/Details/@item.Id_Curso" class="tooltip circle" title="Detalle">
+                <img src="~/Image/addressbook.png"/>
+            </a><span class="barrita">|</span>
+            <a href="/Cursos/Delete/@item.Id_Curso" class="tooltip circle" title="Eliminar">
+                <img src="~/Image/delete-item.png"/>
+            </a>            
+        </td>
+    </tr>
+}
+
+</table>
+</div>
+</section>

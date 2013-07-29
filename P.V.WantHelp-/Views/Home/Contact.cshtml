@@ -1,0 +1,127 @@
+﻿@{
+    ViewBag.Title = "Contact";
+}
+<style>
+    .listview {
+        margin-left: 0;
+        list-style: none;
+    }
+    ul,ol {
+        list-style-position: inside;
+        padding: 0;
+        margin: 0 0 10px 0px;
+        display: block;
+    }
+    ul li, ol li {
+        display: list-item;
+        font-size: 14px;
+        line-height: 20px;
+   }
+    li {
+    display: list-item;
+    text-align: -webkit-match-parent;
+    }
+    .listview li:before, .listview li:after {
+        display: table;
+        content: "";
+        }
+    *:after, *:before {
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+        }
+    .listview.image li .icon {
+width: 48px;
+height: 48px;
+border: 0px #ccc solid;
+font-size: 40px;
+float: left;
+}
+    .listview.image li .data {
+margin-left: 110px;
+}
+    .listview.image li .data h4 {
+        color: rgba(0, 0, 0, 0.6);
+margin-bottom: 4px;
+margin: 0;
+padding: 0 0 2px 0;
+}
+    .listview.image li .data p {
+line-height: 16px;
+font-size: 10pt;
+margin-bottom: 5px;
+margin: 0;
+font-size: 9pt;
+}
+    .listview li .icon img {
+width: 100%;
+height: 100%;
+border-radius:5px;
+}
+    .listview li:hover {
+outline: 3px #ccc solid;
+}
+</style>
+<section class="content-wrapper main-content clear-fix">
+<div id="body_Curso">
+<hgroup class="title">
+    <h1>Contáctanos</h1>
+    
+</hgroup>
+<img src="~/Image/bannera3v3.jpg" style="width:600px;margin-left:18%;border-radius:8px;"/>
+    <section class="contact">
+        <ul class="listview image">
+            <li>
+                <div class="icon">
+                    <img src="~/Images/img user/fotoAmelia.png">
+                </div>
+                <div class="data">
+                    <h4>Amelia</h4>
+                    <p>
+                        Hola! Mi nombre es Amelia y soy programador en Html5, Jquery, Mvc 4.etc. Tambien analizadora en sistemas de gestion.
+                    </p>
+                    <p><span>72432290</span></p>
+                    <span><img src="~/Images/img/email.png"><a href="mailto:amelia@hotmail.com">amelia@hotmail.com</a></span>
+                </div>
+            </li>
+            <li class="bg-color-red fg-color-white">
+                <div class="icon">
+                    <img src="~/Images/img user/fotoMiguel.png">
+                </div>
+                <div class="data">
+                    <h4>Miguel</h4>
+                    <p>
+                        Hola! Mi nombre es Miguel y soy programador en Html5, Css3, Jquery, Mvc 4.etc.
+                    </p>
+                    <p><span>75726966</span></p>
+                    <span><img src="~/Images/img/email.png"><a href="mailto:miguel@hotmail.com">miguel@hotmail.com</a></span>
+                </div>
+            </li>
+            <li>
+                <div class="icon">
+                    <img src="~/Images/img user/fotoDominic.png">
+                </div>
+                <div class="data">
+                    <h4>Alfredo</h4>
+                    <div class="static-rating small">
+                        <div class="rating-value" style="width: 100%"></div>
+                    </div>
+                    <p>
+                        Hola! Mi nombre es Alfredo y soy programador en Html5, Css3, Jquery, Mvc 4.etc.
+                    </p>
+                    <p><span>76164334</span></p>
+                    <span><img src="~/Images/img/email.png"><a href="mailto:AlfredQ.117.death@gmail.com">AlfredQ.117.death@gmail.com</a></span>
+                </div>
+            </li>
+        </ul>
+    </section>
+<section class="contact">
+    <header>
+        <h3>Informacion</h3>
+    </header>
+    <p>
+        Los Administradores se contactaran mandanos un mensaje a nuestros Emails...
+    </p>
+</section>
+    </div>
+</section>

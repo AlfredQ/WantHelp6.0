@@ -1,0 +1,68 @@
+﻿@model IEnumerable<P.V.WantHelp_.Models.webpages_UsersInRoles>
+
+@{
+    ViewBag.Title = "Index";
+}
+<link href="~/cssInk/css/ink.css" type="text/css" rel="stylesheet"/>
+
+<style type="text/css">
+    
+    footer {
+    clear:both;
+    background-color: #414E5E;   
+    font-size: .8em;
+    height: 61px;
+    border-radius: 5px 5px 5px 5px;
+    margin:2px 2px 2px 2px;
+
+    filter: progid:DXImageTransform.Microsoft.gradient(gradientType=0, startColorstr='#FF696969', endColorstr='#FF252525');
+    
+}
+</style>
+
+<section class="content-wrapper main-content clear-fix">
+<div id="body_Curso">
+<h2 class="letraD" style="color:#0d3a62;">Asignación de Roles</h2>
+    <p>
+    <a href="/RolesUser/Create" class="tooltip circle" title="Asignar Rol">
+        <img src="~/Image/add-item.png"/>
+    </a>
+</p>
+<p><a href="/RolesUser/VistaDetalleRA" class="classname">Detalle de la Asignación de Roles</a></p>
+<table class="ink-table hover" style="margin:auto">
+    <tr class="letraD">
+        <th></th>
+        <th>
+           Id del Usuario
+        </th>
+        <th>
+            Nombre del Rol Asignado
+        </th>
+    </tr>
+@foreach (var item in Model) {
+    <tr>
+        <td></td>
+        <td>
+            @Html.DisplayFor(modelItem => item.UserId)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.webpages_Roles.RoleName)
+        </td>
+        <td>
+            <a href="/RolesUser/EditConfirmed/@item.RoleId @item.UserId" class="tooltip circle" title="Editar">
+                <img src="~/Image/edit.png"/>
+            </a><span class="barrita">|</span>
+            
+            <a href="/RolesUser/DeleteConfirmed/@item.UserId @item.RoleId" class="tooltip circle" title="Eliminar">
+                <img src="~/Image/delete-item.png"/>
+            </a>
+            
+        </td>
+    </tr>
+}
+
+</table>
+</div>
+</section>
+
+

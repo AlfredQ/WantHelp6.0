@@ -1,0 +1,41 @@
+﻿@model P.V.WantHelp_.Models.ListaRolesAsignadosU
+
+@{
+    ViewBag.Title = "VistaDetalleRA";
+}
+<link href="~/cssInk/css/ink.css" type="text/css" rel="stylesheet"/>
+<section class="content-wrapper main-content clear-fix body_Pages">
+<h2 class="letraD" style="text-align:center;">Lista de Roles Asignados</h2>
+<table class="ink-table hover">
+    <tr class="letraD">
+        <th>Nº</th>
+        <th>Nombre</th>
+        <th>Apellido Paterno</th>
+        <th>Apellido Materno</th>
+        <th>Nombre de Rol</th>
+        <th></th>
+    </tr>
+
+@foreach (var item in ViewBag.listaRolU)
+{
+    <tr>
+        <td>
+            @item.Id_UsuR
+        </td>
+        <td>
+            @item.Nombre
+        </td>
+        <td>
+            @item.Apellido_P
+        </td>
+        <td>
+            @item.Apellido_M
+        </td>
+        <td>
+            @item.RoleName
+        </td>
+    </tr>
+}
+
+</table>
+</section>

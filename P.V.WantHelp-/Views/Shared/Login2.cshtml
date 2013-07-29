@@ -1,0 +1,42 @@
+﻿@{
+    ViewBag.Title = "Login2";
+}
+<style>
+    .userlogin{        
+        background-image: url('../../Image/user221.png');
+    }
+    .passwordlogin {
+        background-image: url('../../Image/key1.png');
+    }
+    .userlogin,.passwordlogin{
+        background-size:20px;
+        background-position-y:6px;
+        background-position-x:5px;
+        margin-left:2px; width:80%;
+        background-repeat: no-repeat;
+        padding-left: 30px;
+    }
+</style>
+@using (Html.BeginForm("Login","Account")) {
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>Log in Form</legend>
+        <ol>
+            <li style="margin-left:5px;">
+                Usuario:
+                <input type="text"  class="userlogin" name="Username" id="Username" placeholder="Nick"/>
+            </li>
+            <li style="margin-left:5px;">
+                Contraseña:
+                <input type="password" class="passwordlogin" name="Password" id="Password" placeholder="******"/>
+            </li>            
+        </ol>
+        <input type="submit" style="margin-left:10px; width:25%;" value="Enviar" />
+    </fieldset>
+    <p>
+        @Html.ActionLink("Regístrate", "Register", "Account", routeValues: null, htmlAttributes: new { id = "registerLink" })
+        Si no tienes cuenta aún.
+    </p>
+}

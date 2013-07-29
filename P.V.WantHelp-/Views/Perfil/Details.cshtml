@@ -1,0 +1,98 @@
+﻿@model P.V.WantHelp_.Models.Usuario
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2 class="letraD" style="font-size:20px; margin-left:30%;">Perfil de Usuario</h2>
+<h3></h3>
+<fieldset>
+    <legend>Usuario</legend>
+    <table style="-moz-box-shadow:2px 2px 7px #000;-webkit-box-shadow:2px 2px 7px #000;box-shadow:2px 2px 7px #000;margin:auto; width:700px;">
+        <tr>
+            <td>
+                <div class="display-label" style="display:none;">
+                     @Html.DisplayNameFor(model => model.Avatar)
+                </div>
+                <div style="margin-left:25%;">
+                        @using(Html.BeginForm()){
+                            <img src="../../Avatar/@ViewBag.foto" alt="imagen" width="100" />  
+                        }
+                </div>
+            </td>
+            <td class="letraD" style="font-size:18px;">
+                <div class="display-label" style="display:none;">
+                     @Html.DisplayNameFor(model => model.Id_Usu)
+                </div>
+                
+                <div class="display-label">
+                     @Html.DisplayNameFor(model => model.Nombre)
+                </div>
+                <div class="display-label">
+                     @Html.DisplayNameFor(model => model.Apellido_P)
+                </div>
+                <div class="editor-label">
+                     @Html.DisplayNameFor(model => model.Apellido_M)
+                </div>
+                <div class="display-label">
+                     @Html.DisplayNameFor(model => model.email)
+                </div>
+                <div class="display-label">
+                     @Html.DisplayNameFor(model => model.sexo)
+                </div>
+                <div class="display-label" style="display:none;">
+                     @Html.DisplayNameFor(model => model.UserId)
+                </div>
+            </td>
+            <td style="font-size:18px;">
+                <div class="display-field" style="display:none;">
+                    @Html.DisplayFor(model => model.Id_Usu)
+                </div>
+                <div class="display-field">
+                    @Html.DisplayFor(model => model.Nombre)
+                </div>
+
+    
+                <div class="display-field">
+                    @Html.DisplayFor(model => model.Apellido_P)
+                </div>
+
+    
+                <div class="editor-label">
+                    @Html.DisplayFor(model => model.Apellido_M)
+                </div>
+
+    
+                <div class="display-field">
+                    @Html.DisplayFor(model => model.email)
+                </div>
+
+    
+                <div class="display-field">
+                    @Html.DisplayFor(model => model.sexo)
+                </div>
+   
+                <div class="display-field" style="display:none;">
+                    @Html.DisplayFor(model => model.UserId)
+                </div>
+            
+        </tr>
+        <tr>
+            <td>
+            <a href="/Perfil/Edit/@Model.Id_Usu" class="tooltip circle" title="Editar">
+                <img src="~/Image/edit.png"/>
+            </a><span class="barrita">|</span>
+            <a href="/Home/" class="tooltip" title="Home">
+                <img src="~/Image/home.png"/>
+            </a>
+            <div style="display:none">
+                @Html.ActionLink("Editar", "Edit", new {id=Model.Id_Usu}) |<!--esta parte hay q arreglar-->
+                @Html.ActionLink("Home", "Index","Home")
+                </div>
+        </td>
+        </tr>
+        
+    </table>
+    
+    
+</fieldset>

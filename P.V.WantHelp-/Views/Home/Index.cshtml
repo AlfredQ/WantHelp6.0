@@ -1,0 +1,265 @@
+﻿@model P.V.WantHelp_.Models.Listacurso
+@{
+    ViewBag.Title = "P.V.WantHelp";
+}
+<link rel="stylesheet" type="text/css" href="~/Css/ChatGeneral.css">
+<link rel="stylesheet" type="text/css" href="~/Css/estilosGeneral.css" />
+<style>
+    .nav-tabs {
+        line-height: 20px;
+        border: 1px solid transparent;
+        border-bottom: 1px solid #ccc;
+        padding-top: 6px;
+        padding-bottom: 6px;
+        font-size: 11.9px;
+        background: #f5f5f5;
+        text-align:center;
+        text-transform:uppercase;
+        font-style:oblique;
+        font-weight:bold;
+    }
+    .tab-wrap {
+        padding: 12px;
+    }
+    .tab-content {
+        overflow: auto;
+        margin-bottom: 20px;
+    }
+    .tab-content>.active{
+        display: block;
+    }
+    .tab-content,.Contenido{
+        overflow: auto;
+        margin-bottom: 20px;
+        border:1px solid #3497c5;
+        display:block;
+    }
+    .nav,.Contenido {
+        margin-left: 0;
+        margin-bottom: 20px;
+        list-style: none;
+    }
+    .nav-actions li {
+        padding: 2px 0;
+        border-bottom: 1px dotted #eee;
+    }
+    .nav-actions li a {
+        border: 0 none;
+        background-image: url('../../Images/img/cube.png');
+        background-repeat: no-repeat;
+        background-position: left top;
+        padding-left: 26px;
+        text-transform:uppercase;
+    }
+    .nav>li>a {display: block;}
+    .nav-actions li a{
+        color: #3497c5;
+        text-decoration: none;
+        -webkit-transition: all .3s ease;
+        -moz-transition: all .3s ease;
+        -o-transition: all .3s ease;
+        transition: all .3s ease;
+    }
+    /********/
+    .nav-action li {
+        padding: 2px 0;
+        border-bottom: 1px dotted #eee;
+    }
+    /********/
+    .nav-actions li a:hover {
+        background-color: transparent;
+        background-position: 4px top;
+    }
+    .nav-action li a:hover {
+        background-color: transparent;
+        background-position: 4px top;
+    }
+    .nav>li>a:hover, .nav>li>a:focus {
+        text-decoration: none;
+        background-color: #eee;
+    }
+</style>
+<script type="text/javascript" src="~/Js/jquery.min.js"></script>
+        <script>
+            $(document).ready(function () {
+
+                /*********** Recuperar el ancho y alto dela pantalla (resolucion)***********/
+                $("#contenedorlogin").css('height', '270px');
+
+                /*****************Opcion para ocultar y mostrar el div*******************/
+                $("#enlaceIn").click(function () {
+                    $("#contenedorlogin").show();
+                    $("#enlaceIn").hide();
+                    $("#enlaceOut").show();
+                });
+                $("#enlaceOut").click(function () {
+                    $("#contenedorlogin").hide();
+                    $("#enlaceOut").hide();
+                    $("#enlaceIn").show();
+                });
+
+                /**************Codigo para ocultar el div cuando se haga click en cualquier otro lado del documento****************/
+
+                $(document.body).click(function (e) {
+                    var $box = $('#contenedorlogin');
+                    if (e.target.id !== 'contenedorlogin' && e.target.id !== 'enlaceIn' && e.target.id !== 'enlaceOut' && !$.contains($box[0], e.target)) {
+                        $("#contenedorlogin").hide();
+                        $("#enlaceOut").hide();
+                        $("#enlaceIn").show();
+                    }
+                });
+            });
+        </script>
+<!--otroo menu -->
+<!--<script>
+    $(document).ready(function () {
+
+        /*********** Recuperar el ancho y alto dela pantalla (resolucion)***********/
+        $(".menudesplegable").css('height', $(window).height());
+
+        /*****************Opcion para ocultar y mostrar el div*******************/
+        $(".menucursoscel").click(function () {
+            $(".divcursoscel").show();
+            $(".menucursoscel").hide();
+            $(".menucursoscel2").show();
+        });
+        $(".menucursoscel2").click(function () {
+            $(".divcursoscel").hide();
+            $(".menucursoscel2").hide();
+            $(".menucursoscel").show();
+        });
+
+        /**************Codigo para ocultar el div cuando se haga click en cualquier otro lado del documento****************/
+
+        $(document.body).click(function (e) {
+            var $box = $('.divcursoscel');
+            if (e.target.id !== 'divcursoscel' && e.target.id !== 'menucursoscel' && e.target.id !== 'menucursoscel2' && !$.contains($box[0], e.target)) {
+                $(".divcursoscel").hide();
+                $(".menucursoscel2").hide();
+                $(".menucursoscel").show();
+            }
+        });
+    });
+ </script>-->
+
+<!-- Start WOWSlider.com HEAD section -->
+<link rel="stylesheet" type="text/css" href="~/Js/engine1/style.css" />
+<link rel="stylesheet" type="text/css" href="~/Css/Mediaquery.css" />
+<!-- End WOWSlider.com HEAD section -->
+@section featured {
+    @Scripts.Render("~/bundles/jquery")
+    <section class="featured">
+        <div class="content-wrapper">
+            <!-- Start WOWSlider.com BODY section -->
+	        <div id="wowslider-container1">
+	            <div class="ws_images" ><ul >
+                    <li><img src="~/Image/data1/images/about_us_slide_11.jpg" id="wows1_8"/><!--alt="about_us_slide_11" title="about_us_slide_11"==>--> Plataforma Virtual</li>
+                    <li><img src="~/Image/data1/images/about_us_slide_2.jpg" id="wows1_0"/><!--alt="about_us_slide_1" title="about_us_slide_1" ==> -->Trabajo en grupo</li>
+                    <li><img src="~/Image/data1/images/fproktabstop2.jpg" id="wows1_1"/><!--alt="about_us_slide_2" title="about_us_slide_2"==> -->Chat en cursos</li>
+                    <li><img src="~/Image/data1/images/about_us_slide_1.jpg"id="wows1_2"/> <!--alt="about_us_slide_3" title="about_us_slide_3"==>--> Trabajando en equipo</li>
+                    <li><img src="~/Image/data1/images/about_us_slide_4.jpg" id="wows1_3"/><!--alt="about_us_slide_4" title="about_us_slide_4"==>--> Preguntas</li>
+                    <li><img src="~/Image/data1/images/about_us_slide_5.jpg"id="wows1_4"/> <!--alt="about_us_slide_5" title="about_us_slide_5"==>--> Realizaras proyectos</li>
+                    <li><img src="~/Image/data1/images/fproktabstop3.jpg"id="wows1_5"/> <!--alt="about_us_slide_6" title="about_us_slide_6"==>--> Coordinacion en grupo</li>
+                    <li><img src="~/Image/data1/images/fproktabstop5.jpg"id="wows1_6"/> <!--alt="about_us_slide_7" title="about_us_slide_7"==>--> Realizaras prácticas</li>
+                    <li><img src="~/Image/data1/images/why_choose_us_2.jpg" id="wows1_7"/><!--alt="about_us_slide_9" title="about_us_slide_9"==> -->Presentacion del trabajo</li>                    
+                </ul></div>
+                <div class="ws_bullets">
+                    <div>
+                        <a href="#" title="about_us_slide_11"><img src="~/Image/data1/tooltips/about_us_slide_11.jpg" alt="about_us_slide_11"/>9</a>
+                        <a href="#" title="about_us_slide_1"><img src="~/Image/data1/tooltips/about_us_slide_2.jpg" alt="about_us_slide_1"/>1</a>
+                        <a href="#" title="about_us_slide_2"><img src="~/Image/data1/tooltips/fproktabstop2.jpg" alt="about_us_slide_2"/>2</a>
+                        <a href="#" title="about_us_slide_3"><img src="~/Image/data1/tooltips/about_us_slide_1.jpg" alt="about_us_slide_3"/>3</a>
+                        <a href="#" title="about_us_slide_4"><img src="~/Image/data1/tooltips/about_us_slide_4.jpg" alt="about_us_slide_4"/>4</a>
+                        <a href="#" title="about_us_slide_5"><img src="~/Image/data1/tooltips/about_us_slide_5.jpg" alt="about_us_slide_5"/>5</a>
+                        <a href="#" title="about_us_slide_6"><img src="~/Image/data1/tooltips/fproktabstop3.jpg" alt="about_us_slide_6"/>6</a>
+                        <a href="#" title="about_us_slide_7"><img src="~/Image/data1/tooltips/fproktabstop5.jpg" alt="about_us_slide_7"/>7</a>
+                        <a href="#" title="about_us_slide_9"><img src="~/Image/data1/tooltips/why_choose_us_2.jpg" alt="about_us_slide_9"/>8</a>
+                        
+                    </div>
+                </div>
+	                </div>
+	                <script type="text/javascript" src="~/Js/engine1/wowslider.js"></script>
+	                <script type="text/javascript" src="~/Js/engine1/script.js"></script>
+	        
+        </div>
+    </section>  
+}
+<div class="contenedormenucel">
+    <div class="menudesplegable"></div>
+    <a href="http://localhost:2606/estudiante/" style="text-decoration:none;"><div class="menucursoscel">Ver Cursos</div></a>     
+</div>
+<div id="body_content">
+    <!---inicion Importante--->
+    <div class="importante">
+        <img src="~/Image/Bandera.png" alt="Icon-note-left" width="12" height="38" style="position: absolute; left: 12px;top: -4px">
+        <img src="~/Image/Bandera.png" alt="Icon-note-right" width="12" height="38" style="position: absolute; right: 12px;top: -4px">
+        <div style="display:inline-block; margin-left:30px;"><strong>Tal vez te interese... </strong></div> 
+        <div style="display:inline-block;"><div class="ayuda">"<strong style="color:#cd853f;">Los nuevos cursos que tenemos de nuestra plataforma virtual :)</strong>"</div></div> 
+        <div style="display:inline-block;"><strong class="sinsesion">Necesita iniciar sesion para entrar a los cursos</strong></div>
+    </div>
+    <!---fin Importante--->    
+    <div class="main">       
+            @foreach (var item in ViewBag.lista){           
+                <div class="view view-sixth">  
+                     <img src="@item.portadascurso" />  
+                     <div class="mask">                                       
+                             <h2>@item.titulo</h2>                 
+                             <p>@item.descripcion</p>
+                            @if (Request.IsAuthenticated)
+                            { 
+                                <a href="http://localhost:2606/estudiante/clasesCurso/@item.id" class="info">Ir a @item.titulo</a>
+                            }   
+                            else{
+                                <div class="info">inicie sesion</div>
+                            }              
+                     </div> 
+                </div>
+            }
+    </div>
+    
+    <div class="mainlogin" id="mainlogin">
+        <div class="ocultarlogin">
+            <div id="enlaceIn" >Login</div>
+            <div id="enlaceOut" >Login</div>
+		    <div id="contenedorlogin">
+              @Html.Partial("Login2") 
+            </div>
+        </div>
+        <div id="redessociales">
+            <div id="share-float" class="share-float" >
+                <!-- inicio de me gusta face-->
+                <div id="fb-root" ></div>
+                <script src="http://connect.facebook.net/es_LA/all.js#xfbml=1"></script>
+                <!--<div style="border:0px solid #cd853f;" class="fb-like" data-href="https://www.facebook.com/Griffith.es" data-standard="false" data-send="false" data-width="250" data-show-faces="true" data-font="segoe ui"></div>-->
+                <div style="border:0px solid #cd853f;" class="fb-like-box" data-href="https://www.facebook.com/Griffith.es" data-width="120" data-height="92" data-show-faces="false" data-stream="false" data-show-border="false" data-header="false"></div>
+            </div>
+        </div>
+        <div class="sectorcursos" id="sectorcursos">
+            <div style="width:90%;border:1px solid #000;margin:0 auto; margin-top:5px;"></div>
+            <p style="margin:0 auto;text-align:center;font-size:18px;"><b>Cursos</b></p>
+            <ul class="nav nav-actions">
+                @foreach (var item in ViewBag.lista2){                                                        
+                             <li><a href="http://localhost:2606/estudiante/clasesCurso/@item.id">@item.titulo</a></li>                             
+                }                
+            </ul>
+        </div>
+        <div class="RedeSociales">
+            <!-- Twitter -->
+            <script src="http://platform.twitter.com/widgets.js"></script>
+            <a href="https://twitter.com/share" class="twitter-share-button" data-text="#Griffith.es|Visitando la plataforma virtual y la realizacion de proyectos " data-url="https://www.facebook.com/Griffith.es" data-count="horizontal" data-lang="es" >Twittear</a>
+            
+            <br /><br />
+            <!-- Place this tag where you want the +1 button to render. -->
+            <div class="g-plusone" data-annotation="none"></div>
+            <!-- Place this tag after the last +1 button tag. -->
+            <script type="text/javascript">
+                (function () {
+                    var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+                    po.src = 'https://apis.google.com/js/plusone.js';
+                    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+                })();
+            </script>
+        </div>    
+    </div>
+    
+</div>

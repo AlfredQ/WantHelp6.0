@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="f369a5dac1994e20959f998d3808c19a" Name="Diagram1">
+        <EntityTypeShape EntityType="PlataformaVirtualModel.archivos" Width="1.5" PointX="3" PointY="13" IsExpanded="true" />
+        <EntityTypeShape EntityType="PlataformaVirtualModel.avatar" Width="1.5" PointX="3" PointY="17.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="PlataformaVirtualModel.Comentarios" Width="1.5" PointX="6" PointY="15" IsExpanded="true" />
+        <EntityTypeShape EntityType="PlataformaVirtualModel.Cursos" Width="1.5" PointX="3.75" PointY="7.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="PlataformaVirtualModel.inscripcion" Width="1.5" PointX="6" PointY="11.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="PlataformaVirtualModel.Material" Width="1.5" PointX="6" PointY="19" IsExpanded="true" />
+        <EntityTypeShape EntityType="PlataformaVirtualModel.mensajes" Width="1.5" PointX="3" PointY="20.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="PlataformaVirtualModel.Preguntas" Width="1.5" PointX="3" PointY="35.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="PlataformaVirtualModel.puntuacionChat" Width="1.5" PointX="8.25" PointY="17.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="PlataformaVirtualModel.puntuacionRes" Width="1.5" PointX="10.5" PointY="17.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="PlataformaVirtualModel.Respuestas" Width="1.5" PointX="5.25" PointY="23.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="PlataformaVirtualModel.Respuestas_Chat" Width="1.5" PointX="8.25" PointY="20.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="PlataformaVirtualModel.sesiones" Width="1.5" PointX="0.75" PointY="8.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="PlataformaVirtualModel.Usuario" Width="1.5" PointX="0.75" PointY="13" IsExpanded="true" />
+        <EntityTypeShape EntityType="PlataformaVirtualModel.webpages_Membership" Width="1.5" PointX="0.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="PlataformaVirtualModel.webpages_OAuthMembership" Width="1.5" PointX="2.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="PlataformaVirtualModel.webpages_Roles" Width="1.5" PointX="0.75" PointY="0.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="PlataformaVirtualModel.webpages_UsersInRoles" Width="1.5" PointX="3" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="PlataformaVirtualModel.DetalleRolesAsignadosUsers" Width="1.5" PointX="4.75" PointY="3.75" IsExpanded="true" />
+        <AssociationConnector Association="PlataformaVirtualModel.FK__archivos__idSe__5165187F" ManuallyRouted="false" />
+        <AssociationConnector Association="PlataformaVirtualModel.FK__archivos__idSe__7A672E12" ManuallyRouted="false" />
+        <AssociationConnector Association="PlataformaVirtualModel.FK__archivos__idUs__5070F446" ManuallyRouted="false" />
+        <AssociationConnector Association="PlataformaVirtualModel.FK__archivos__idUs__7B5B524B" ManuallyRouted="false" />
+        <AssociationConnector Association="PlataformaVirtualModel.FK__avatar__Id_Usu__25869641" ManuallyRouted="false" />
+        <AssociationConnector Association="PlataformaVirtualModel.FK__avatar__Id_Usu__7C4F7684" ManuallyRouted="false" />
+        <AssociationConnector Association="PlataformaVirtualModel.FK__Comentari__Id_Re__6754599E" ManuallyRouted="false" />
+        <AssociationConnector Association="PlataformaVirtualModel.FK__Comentari__Id_Re__7D439ABD" ManuallyRouted="false" />
+        <AssociationConnector Association="PlataformaVirtualModel.FK__Comentari__Id_Us__66603565" ManuallyRouted="false" />
+        <AssociationConnector Association="PlataformaVirtualModel.FK__Comentari__Id_Us__7E37BEF6" ManuallyRouted="false" />
+        <AssociationConnector Association="PlataformaVirtualModel.FK__inscripcio__idCu__2E1BDC42" ManuallyRouted="false" />
+        <AssociationConnector Association="PlataformaVirtualModel.FK__inscripcio__idCu__7F2BE32F" ManuallyRouted="false" />
+        <AssociationConnector Association="PlataformaVirtualModel.FK__Material__Id_Cur__01142BA1" ManuallyRouted="false" />
+        <AssociationConnector Association="PlataformaVirtualModel.FK__Material__Id_Cur__571DF1D5" ManuallyRouted="false" />
+        <AssociationConnector Association="PlataformaVirtualModel.FK__sesiones__idCu__0E6E26BF" ManuallyRouted="false" />
+        <AssociationConnector Association="PlataformaVirtualModel.FK__sesiones__idCu__33D4B598" ManuallyRouted="false" />
+        <AssociationConnector Association="PlataformaVirtualModel.FK__inscripcio__idUs__00200768" ManuallyRouted="false" />
+        <AssociationConnector Association="PlataformaVirtualModel.FK__inscripcio__idUs__2F10007B" ManuallyRouted="false" />
+        <AssociationConnector Association="PlataformaVirtualModel.FK__Material__Id_Usu__02084FDA" ManuallyRouted="false" />
+        <AssociationConnector Association="PlataformaVirtualModel.FK__Material__Id_Usu__5629CD9C" ManuallyRouted="false" />
+        <AssociationConnector Association="PlataformaVirtualModel.FK__mensajes__idSe__02FC7413" ManuallyRouted="false" />
+        <AssociationConnector Association="PlataformaVirtualModel.FK__mensajes__idSe__398D8EEE" ManuallyRouted="false" />
+        <AssociationConnector Association="PlataformaVirtualModel.FK__mensajes__idUs__03F0984C" ManuallyRouted="false" />
+        <AssociationConnector Association="PlataformaVirtualModel.FK__mensajes__idUs__38996AB5" ManuallyRouted="false" />
+        <AssociationConnector Association="PlataformaVirtualModel.FK__puntuacion__idMe__05D8E0BE" ManuallyRouted="false" />
+        <AssociationConnector Association="PlataformaVirtualModel.FK__puntuacion__idMe__4AB81AF0" ManuallyRouted="false" />
+        <AssociationConnector Association="PlataformaVirtualModel.FK__Respuesta__idCha__0B91BA14" ManuallyRouted="false" />
+        <AssociationConnector Association="PlataformaVirtualModel.FK__Respuesta__idCha__403A8C7D" ManuallyRouted="false" />
+        <AssociationConnector Association="PlataformaVirtualModel.FK__Preguntas__Id_Us__04E4BC85" ManuallyRouted="false" />
+        <AssociationConnector Association="PlataformaVirtualModel.FK__Preguntas__Id_Us__5BE2A6F2" ManuallyRouted="false" />
+        <AssociationConnector Association="PlataformaVirtualModel.FK__Respuesta__Id_Pr__09A971A2" ManuallyRouted="false" />
+        <AssociationConnector Association="PlataformaVirtualModel.FK__Respuesta__Id_Pr__619B8048" ManuallyRouted="false" />
+        <AssociationConnector Association="PlataformaVirtualModel.FK__puntuacion__IdUs__06CD04F7" ManuallyRouted="false" />
+        <AssociationConnector Association="PlataformaVirtualModel.FK__puntuacion__IdUs__4BAC3F29" ManuallyRouted="false" />
+        <AssociationConnector Association="PlataformaVirtualModel.FK__puntuacio__idRes__07C12930" ManuallyRouted="false" />
+        <AssociationConnector Association="PlataformaVirtualModel.FK__puntuacio__idRes__44FF419A" ManuallyRouted="false" />
+        <AssociationConnector Association="PlataformaVirtualModel.FK__puntuacion__IdUs__08B54D69" ManuallyRouted="false" />
+        <AssociationConnector Association="PlataformaVirtualModel.FK__puntuacion__IdUs__45F365D3" ManuallyRouted="false" />
+        <AssociationConnector Association="PlataformaVirtualModel.FK__Respuesta__Id_Us__0A9D95DB" ManuallyRouted="false" />
+        <AssociationConnector Association="PlataformaVirtualModel.FK__Respuesta__Id_Us__60A75C0F" ManuallyRouted="false" />
+        <AssociationConnector Association="PlataformaVirtualModel.FK__Respuestas__idSe__0C85DE4D" ManuallyRouted="false" />
+        <AssociationConnector Association="PlataformaVirtualModel.FK__Respuestas__idSe__3F466844" ManuallyRouted="false" />
+        <AssociationConnector Association="PlataformaVirtualModel.FK__Respuestas__idUs__0D7A0286" ManuallyRouted="false" />
+        <AssociationConnector Association="PlataformaVirtualModel.FK__Respuestas__idUs__3E52440B" ManuallyRouted="false" />
+        <AssociationConnector Association="PlataformaVirtualModel.fk_RoleId" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
