@@ -1,0 +1,38 @@
+﻿@{
+    ViewBag.Title = "CrearClass";
+}
+<h2>CrearClass</h2>
+<form action="/Facilitador/CrearClass" method="post" novalidate="novalidate">    <fieldset>
+        <legend>sesiones</legend>
+
+        <div class="editor-label">
+            <label for="titulo">titulo</label>
+        </div>
+        <div class="editor-field">
+            <input class="text-box single-line" id="titulo" name="titulo" type="text" value="">
+            <span class="field-validation-valid" data-valmsg-for="titulo" data-valmsg-replace="true"></span>
+        </div>
+        <div class="editor-label">
+            <label for="descriocion">descriocion</label>
+        </div>
+        <div class="editor-field">
+            <input class="text-box single-line" id="descriocion" name="descriocion" type="text" value="">
+            <span class="field-validation-valid" data-valmsg-for="descriocion" data-valmsg-replace="true"></span>
+        </div>
+        <div class="editor-label" style="display:none;">
+            <label for="idCu">idCu</label>
+        </div>
+        <div class="editor-field" >
+            <input type="text" id="idCu" value="@ViewBag.idCu" />
+        </div>
+        <p>
+            <input type="submit" value="Create">
+        </p>
+    </fieldset>
+</form>
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

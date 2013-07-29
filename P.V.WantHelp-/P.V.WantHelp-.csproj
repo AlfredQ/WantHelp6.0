@@ -169,6 +169,7 @@
     <Compile Include="Controllers\AdminController.cs" />
     <Compile Include="Controllers\CursosController.cs" />
     <Compile Include="Controllers\EstudianteController.cs" />
+    <Compile Include="Controllers\FacilitadorController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\isertarController.cs" />
     <Compile Include="Controllers\MaterialController.cs" />
@@ -176,6 +177,7 @@
     <Compile Include="Controllers\RegistrosController.cs" />
     <Compile Include="Controllers\RolesController.cs" />
     <Compile Include="Controllers\RolesUserController.cs" />
+    <Compile Include="Controllers\SessionesController.cs" />
     <Compile Include="Controllers\UploadController.cs" />
     <Compile Include="Controllers\VistasProyectoController.cs" />
     <Compile Include="Models\archivos.cs">
@@ -609,6 +611,15 @@
     <Content Include="Views\Estudiante\IngresaAlMaterial.cshtml" />
     <Content Include="Views\RolesUser\VistaDetalleRA.cshtml" />
     <Content Include="Views\Estudiante\MostrarCursosArchivos.cshtml" />
+    <Content Include="Views\Sessiones\Index.cshtml" />
+    <Content Include="Views\Sessiones\Details.cshtml" />
+    <Content Include="Views\Sessiones\Create.cshtml" />
+    <Content Include="Views\Sessiones\Edit.cshtml" />
+    <Content Include="Views\Sessiones\Delete.cshtml" />
+    <Content Include="Views\Facilitador\Index.cshtml" />
+    <Content Include="Views\Facilitador\ClasesCurso.cshtml" />
+    <Content Include="Views\Facilitador\Create.cshtml" />
+    <Content Include="Views\Facilitador\CrearClass.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

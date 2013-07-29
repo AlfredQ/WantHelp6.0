@@ -1,0 +1,36 @@
+﻿@model P.V.WantHelp_.Models.sesiones
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>sesiones</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.titulo)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.titulo)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.descriocion)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.descriocion)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.idCu)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.idCu)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id=Model.id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

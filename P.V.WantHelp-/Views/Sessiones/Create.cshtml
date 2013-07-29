@@ -1,0 +1,51 @@
+﻿@model P.V.WantHelp_.Models.sesiones
+
+@{
+    ViewBag.Title = "Create";
+}
+
+<h2>Create</h2>
+
+@using (Html.BeginForm()) {
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>sesiones</legend>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.titulo)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.titulo)
+            @Html.ValidationMessageFor(model => model.titulo)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.descriocion)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.descriocion)
+            @Html.ValidationMessageFor(model => model.descriocion)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.idCu)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.idCu)
+            @Html.ValidationMessageFor(model => model.idCu)
+        </div>
+
+        <p>
+            <input type="submit" value="Create" />
+        </p>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

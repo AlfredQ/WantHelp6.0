@@ -1,0 +1,243 @@
+﻿@model IEnumerable<P.V.WantHelp_.Models.sesiones>
+
+@{
+    ViewBag.Title = "ClasesCurso";
+}
+<link rel="stylesheet" type="text/css" href="~/Css/Nuevos.css" />
+
+<style  type="text/css">
+    .contenedor_opcionescursos{
+       margin:0 auto;       
+       border:#000000 0px solid;
+       min-height:30px;
+    }
+    .opcionesC{
+        display:inline-block;
+        border:#000000 5px solid;
+       padding-left:0px 2px;
+       margin:2px 5px;
+       color:#000000;
+       font-weight:normal;
+       font-size:12px;
+       vertical-align:middle;
+       text-align:center;
+    }
+    .optionRight {
+        max-width:48%;
+        margin-top:-50px;
+    }
+    .optionRightC, .optionLeftC {
+        display:inline-block;
+        border:5px solid #808080;
+    }
+    .contenedor {
+        display:inline-block;
+        background:#ffffff;
+        border-radius:5px;
+        margin:0 auto;
+        min-height:30px;
+        text-align:center;
+        border:1px solid #cfdee5;
+        -moz-box-shadow:2px 2px 7px #000;
+        -webkit-box-shadow:2px 2px 7px #000;
+        box-shadow:2px 2px 7px #000;
+    }
+    .opciones{
+       padding-left:0px 2px;
+       margin:2px 5px;
+       color:#000000;
+       font-weight:normal;
+       font-size:12px;
+       vertical-align:middle;
+       text-align:center;
+       float:left;
+    }
+    .optionRightC {
+        max-width:45%;
+    }
+    .optionLeftC {
+        max-width:50%;
+    }
+    .optionLeft {
+        max-width:53%;
+        margin-left:0px;
+    }
+    .preguntaD {
+        border:1px solid #000;width:180px; max-width:180px;height:100px;margin:5px 0px 0px 5px;display:inline-block;
+    }
+    .mentionsIntup { width:98px;
+    }
+    .mensaje {
+        width:262px;
+    }
+    .borderC{
+        border:1px solid #cfdee5;
+        -moz-box-shadow:2px 2px 7px #000;
+        -webkit-box-shadow:2px 2px 7px #000;
+        box-shadow:2px 2px 7px #000;
+        height:120px;
+        margin:10px;
+    }
+    .tituloC,.descripcionC {
+        font-family: Georgia;
+        color: #808080;
+        text-align: center;
+        font-weight: bold;
+    }
+    .tituloC{
+        font-size: 20px;
+        -moz-border-radius: 5px;
+        -webkit-border-radius: 5px;
+        border-radius: 5px;
+        background-color: #fcfcfc;
+        border-color: #bbbbbb #dddddd #eeeeee;
+        border-style: solid;
+        border-width: 1px;
+        letter-spacing: 1px;
+        margin: 0 0 5px 0;
+        padding: 2px 8px;
+    }
+    .descripcionC {
+        margin:0px 0px 0px 10px;
+    }
+   .commentmetadata {
+    margin: 5px 0 0 0;
+    display: block;
+    color: #cc0000;
+    }
+    .coment-author {
+        margin-left:0px;
+    }
+    .cite {
+        font-weight: normal;
+        font-style: normal;
+        font-size: 11px;
+        color: #000;
+        margin-left:0px;
+    }
+    .puntuacionRM {
+        margin:-5px;
+    }
+    .puntuacionR {
+        border:0px solid #000;
+        display:inline-block;
+        margin-left:5px;
+        margin-top:5px;
+    }
+</style>
+<script>
+    $(document).ready(function () {
+        $.post("/Cursos/getMensajesR", { "idSe": $("#idSe").val() },
+            function (data) {
+                console.log(data.lista);
+                var i = data.lista.length - 1;
+                html = "";
+                for (i; i >= 0; i--) {
+                    html += "<div class='borderC'>"
+                    html += "<div class='coment-author'>";
+                    html += "<cite>" + data.lista[i].nickR + "</cite><span class='finmsj'>Dice:</span></div>";
+                    html += "<div class='comment-meta commentmetadata'><a href='/'>" + data.lista[i].fechaR + "</a></div>";
+                    html += "<p class='descripcionC'>" + data.lista[i].mensajeR + "</p></div>";
+                }
+                $(".ContenedorRC").html(html);
+            }, "json");
+        $(this).keydown(function (e) {
+            if (e.keyCode == 13) {
+                if ($(".mensaje").val() != "")
+                {
+                    $.post("/Cursos/EnviarBlog", {
+                        "mensaje": $(".mensaje").val(), "idUs": $("#idUs").val(), "idSe": $("#idSe").val()
+                    },
+                        function (data) {
+                            $(".mensaje").val("");
+                        }, "json");
+                }
+            }
+        });
+    });
+</script>
+<section class="section_cursos">
+    <h2>Clases</h2>
+    <p style="margin-left:15px;" class="classname">
+        @Html.ActionLink("  Atrás", "Index") |
+        <a href="/Facilitador/CrearClass/@ViewBag.idCu">Crear Clases</a> 
+    </p>
+    <div class="contenedor">
+        <div class="opciones optionLeftC ">
+            Saludos Bienvenido a las clases de este curso.. puede ingresar a nuestro chat oh puede descargar los archivos de las clases
+            @foreach (var item in Model) {    
+                <div class="borderC">
+                    <img src="~/Image/trabajo_grupo.jpg" class="curso1img" />
+                    <div>
+                        <div class="tituloC">@Html.DisplayFor(modelItem => item.titulo)</div>
+                        <div class="classname">
+                            <a href="/Estudiante/IngresaAlMaterial/@item.id">Archivos del curso</a> | 
+                            <a href="/Estudiante/IngresarAlCurso/@item.id">Chat</a></div>
+                        <div class="descripcionC">@Html.DisplayFor(modelItem => item.descriocion)</div>
+                    </div>
+                </div>        
+            }   
+        </div>
+        <div class="opciones optionRightC">
+            CSS Button Generator will create beautiful css buttons for you to use on your web
+            <div>
+                <input type="hidden" id="idUs" value="@ViewBag.idUs" />
+                <input type="hidden" id="idSe" value="@ViewBag.idSesion"/>
+                <textarea name="add_comment_text_" maxlength="200" rows="4" cols="6" class="mensaje" title="Escribe un comentario..." placeholder="Escribe un comentario...!! ^_^" aria-owns="js_58" aria-haspopup="true" aria-expanded="false" aria-label="Escribe un comentario..."></textarea>
+            </div>
+            <div class="ContenedorRC">
+                <ul id="MesnajesRC">
+
+                </ul>
+            <div class="borderC">
+                <div class="coment-author">
+                    <img src="~/Avatar/A-usuarioh.png" class="curso1img" />
+                    <cite>Juan Perez</cite>
+                    <span class="finmsj">Dice:</span>
+                </div>
+                <div class="comment-meta commentmetadata"><a href="/">
+                    29/07/2013 a las 02:41 AM</a>
+                </div>
+                <p class="descripcionC">el libro que yo leí se llama LA METAMORFOSIS, el autor es Franz Kafka les invito a que lean este libro en lo personal me encanto, y los invito leanlo de verdad.</p>
+                <div class="puntuacionRM">
+                    <div class="puntuacionR">
+                        <a class="respuesta">2 respuesta</a>
+                    </div>
+                    <div class="puntuacionR">Puntaje &nbsp;
+                        <select>
+                            <option>0</option>
+                            <option>1</option>
+                            <option>2</option>
+                            <option>3</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <div class="borderC">
+                <div class="coment-author">
+                    <img src="~/Avatar/A-usuariom.png" class="curso1img" />
+                    <cite>Maria Elena</cite>
+                    <span class="finmsj">Dice:</span>
+                </div>
+                <div class="comment-meta commentmetadata"><a href="/">
+                    30/07/2013 a las 10:41 AM</a>
+                </div>
+                <p class="descripcionC">Hola Juan que tal como estas si el libro es muy bueno y les invito a que lean este libro en lo personal me encanto, y los invito leanlo de verdad.</p>
+                <div class="puntuacionRM">
+                    <div class="puntuacionR">
+                        <a class="respuesta">2 respuesta</a>
+                    </div>
+                    <div class="puntuacionR">Puntaje &nbsp;
+                        <select>
+                            <option>0</option>
+                            <option>1</option>
+                            <option>2</option>
+                            <option>3</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            </div>
+        </div>
+    </div>   
+</section>

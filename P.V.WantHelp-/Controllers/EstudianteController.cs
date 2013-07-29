@@ -11,7 +11,6 @@ using System.IO;
 using System.IO.Compression;
 using P.V.WantHelp_.Models;
 
-
 namespace P.V.WantHelp_.Controllers
 {
     public class EstudianteController : Controller
@@ -33,7 +32,7 @@ namespace P.V.WantHelp_.Controllers
                 Permisos check = new Permisos(Convert.ToInt32(Session["idus"]));
                 ViewBag.Menus = check.getPermisos();
             };
-            return View(db.Cursos.OrderByDescending(a => a.Id_Curso).ToList()); ;
+            return View(db.Cursos.OrderByDescending(a => a.Id_Curso).ToList());
         }
         public ActionResult ClasesCurso(int id)
         {
